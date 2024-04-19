@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
 
+{% block title %}{{ post.title }}{% endblock %}
+
 {% block content %}
     <div class="post">
         {% if post.date_published %}
@@ -11,4 +13,5 @@
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+    <a href="{% url 'post_list' %}" class="btn btn-secondary">back</a>
 {% endblock %}
